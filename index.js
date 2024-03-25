@@ -10,7 +10,11 @@ import { config } from 'dotenv';
 config(); // Load environment variables from .env file
 
 const app = express();
-app.use(cors());
+//app.use(cors());
+// Enable CORS middleware for specific origins
+app.use(cors({
+    origin: process.env.REDIRECT_URL
+}));
 
 // Use Pool from 'pg' module
 const pool = new Pool({
