@@ -39,7 +39,14 @@ pool.connect((err, client, release) => {
 });
 
 app.get('/', (req, res) => {
-    return res.json("From BackEnd Side");
+    //return res.json("From BackEnd Side");
+    pool.query('SELECT * FROM book', (err, result) => {
+        if (err) {
+            console.error('Error executing query', err.stack);
+            return res.status(500).json({ error: 'Error executing query' });
+        }
+        return res.json(result.rows);
+    });
 });
 
 app.get('/book', (req, res) => {
