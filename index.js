@@ -1,5 +1,9 @@
+
 import express from 'express';
-import { Pool } from 'pg';
+import pg from 'pg';
+
+// Access the Pool class from the pg default export
+const { Pool } = pg;
 import cors from 'cors';
 import { config } from 'dotenv';
 
