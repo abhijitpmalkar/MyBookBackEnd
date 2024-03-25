@@ -1,6 +1,6 @@
 
 import express from 'express';
-import pg, { defaults } from 'pg';
+import pg from 'pg';
 
 // Access the Pool class from the pg default export
 const { Pool } = pg;
