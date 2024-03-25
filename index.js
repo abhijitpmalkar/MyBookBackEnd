@@ -1,12 +1,14 @@
-const express = require('express');
-const { Pool } = require('pg');
-const cors = require('cors');
-require('dotenv').config();
+import express from 'express';
+import { Pool } from 'pg';
+import cors from 'cors';
+import { config } from 'dotenv';
+
+config(); // Load environment variables from .env file
 
 const app = express();
 app.use(cors());
 
-// Create a new pool instance for PostgreSQL
+// Use Pool from 'pg' module
 const pool = new Pool({
     user: process.env.POSTGRES_USER,
     host: process.env.POSTGRES_HOST,
