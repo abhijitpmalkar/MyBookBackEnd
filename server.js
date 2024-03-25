@@ -46,3 +46,5 @@ app.get('/book', (req, res) => {
 app.listen(8081, () => {
     console.log("listening");
 })
+
+module.exports = app;
