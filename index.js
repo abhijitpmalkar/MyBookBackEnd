@@ -1,6 +1,6 @@
 
 import express from 'express';
-import pg from 'pg';
+import pg, { defaults } from 'pg';
 
 // Access the Pool class from the pg default export
 const { Pool } = pg;
@@ -53,4 +53,4 @@ app.listen(3000, () => {
     console.log("listening");
 })
 
-module.exports = app;
+export default app;
